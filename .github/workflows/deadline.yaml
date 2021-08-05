@@ -1,0 +1,22 @@
+name: "Coordinated disclosure deadline"
+on:
+  schedule:
+  - cron: "0 0 * * *"
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run Stale action
+      uses: actions/stale@master
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+        stale-issue-message: "It seems like it's been 120-day, has this disclosure not received a response from the vendor yet? Please make a decision in the next 2-day."
+        stale-issue-label: "deadline"
+
+        close-issue-message: "A decision on the deadline for disclosure must be determined."
+        close-issue-label: "TBD"
+
+        days-before-stale: 120
+        days-before-close: 2
