@@ -12,7 +12,7 @@ A defined category for all ongoing or completed disclosures, see this [repositor
 
 ## Policy
 
-See [POLICY.md](https://github.com/dwisiswant0/advisory/blob/master/README.md).
+See [POLICY.md](https://github.com/dwisiswant0/advisory/blob/master/POLICY.md).
 
 ---
 
