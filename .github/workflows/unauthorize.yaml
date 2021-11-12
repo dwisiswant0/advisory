@@ -1,0 +1,27 @@
+name: "Lock unauthorize issuer"
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  unauthorize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v5
+        with:
+          script: |
+            if (context.payload.issue.user.login == context.repo.owner) return;
+            
+            github.rest.issues.update({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'closed'
+            })
+            
+            github.rest.issues.lock({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              reason: 'off-topic'
+            })
