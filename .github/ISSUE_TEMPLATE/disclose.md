@@ -11,6 +11,10 @@ _TBD_
 
 **CVE ID**: _N/A_
 
+## Proof-of-Concept
+
+_TBD and/or N/A_
+
 ## References
 
-- _URL_
+- _TBD_
